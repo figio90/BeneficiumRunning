@@ -1,0 +1,78 @@
+<div class="modal-header">
+    <h2>{{data.titolo}}</h2>
+
+</div>
+
+
+<div class="modal-body">
+
+
+    <form role="form" class="form-horizontal" name="dipModForm" ng-submit="submitForm(dipModForm.$valid)" novalidate>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Dipendente</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" ng-model="data.dipendente.codiceFiscale" value="{{data.dipendente.codiceFiscale}}" >
+
+            </div>
+
+        </div>
+
+        <!-- 
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Nome</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="nome" ng-model="data.dipendente.nome" value="{{data.dipendente.nome}}" required>
+                <p ng-show="dipModForm.nome.$invalid && !dipModForm.nome.$pristine" class="help-block">Inserire nome!</p>    
+            </div>
+        </div>
+
+       
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Cognome</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="cognome" ng-model="data.dipendente.cognome" value="{{data.dipendente.cognome}}" required> 
+                <p ng-show="dipModForm.cognome.$invalid && !dipModForm.cognome.$pristine" class="help-block">Inserire cognome!</p>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Indirizzo</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="indirizzo" ng-model="data.dipendente.indirizzo" value="{{data.dipendente.indirizzo}}" required> 
+                <p ng-show="dipModForm.indirizzo.$invalid && !dipModForm.indirizzo.$pristine" class="help-block">Inserire indirizzo!</p>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Stipendio mensile</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="stipendio" ng-model="data.dipendente.stipendioMensile" value="{{data.dipendente.stipendioMensile}}" required> 
+                <p ng-show="dipModForm.stipendio.$invalid && !dipModForm.stipendio.$pristine" class="help-block">Inserire stipendio!</p>
+            </div>
+        </div>
+        
+        -->
+         <div class="form-group">
+            <label class="col-sm-3 control-label">Società</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="societa" ng-model="data.dipendente.societa" value="{{data.dipendente.societa}}" required> 
+                <p ng-show="dipModForm.societa.$invalid && !dipModForm.societa.$pristine" class="help-block">Inserire società!</p>
+            </div>
+        </div>
+       
+    </form>
+
+</div>
+
+
+
+<div class="modal-footer">
+
+    <button type="submit" class="btn btn-primary" ng-click="modificaDipendente()" ng-disabled="dipModForm.$invalid">Salva</button>
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+</div>

@@ -1,0 +1,20 @@
+<div class="row"><h3> </h3></div>
+<div class="row">
+    <div class="col-md-9" style= "position:inherit"/>
+       <img src="img/benefimg.JPG" width="787" height="914" alt="imgbenefit"/>
+    </div>
+    <div class="barradestra col-md-3" ng-controller="loginCtrl">
+        <h2>Benvenuto</h2>
+        <h5>Effettua il login</h5>
+        <div class="form-group">
+            <input class="name form-control" type="text" placeholder="Username" ng-model="user.username"/>
+        </div>
+        <div class="form-group">
+            <input class="pw form-control" type="password" placeholder="Password" 
+                   ng-keypress="azioneEnter($event)"
+                   ng-model="user.password"/>
+        </div>
+        <button class="btn btn-default bottone" ng-click="login()" id="submit">Login</button>
+    </div>
+</div>
+{{messaggio}}

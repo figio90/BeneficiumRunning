@@ -1,0 +1,55 @@
+
+<div class="row"><h3> </h3></div>
+<div class="row">
+<div class="col-md-9 intestazione">
+        <h3>LISTA CELLULARI</h3>               
+    </div>
+    <div class="col-md-3 barralogout1">
+        <!--input ng-model="query" type="search" placeholder="Cognome" autofocus-->
+        <button ng-controller="logoutController" class="btn btn-default bottone" ng-click="logout()" id="submit">Logout</button>
+
+    </div>
+</div>
+<div class="row"><h3> </h3></div>
+<div class="row">
+
+        <table class="bordered">
+
+
+            <thead> 
+            <th>Numero</th>
+            <th>Modello</th>
+            <th>Numero sim</th>
+            <th>Azioni</th>
+
+            </thead>
+            <tr ng-repeat="cellulare in cellulari">
+                <td>{{cellulare.numero}}</td>
+                <td>{{cellulare.modello}}</td>
+                <td>{{cellulare.numeroSim}}</td>
+                <td>
+                    <div class="btn-group" dropdown ng-hide="currentEdit[dipendente.codiceFiscale]">
+                        <button class="btn btn-default dropdown-toggle" dropdown-toggle type="button">
+                            Azioni <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ng-click="VisualizzaContrattiCellulare(cellulare.id)">Visualizza contratto</a></li>
+                            <li><a ng-click="modificaCellulare(cellulare)">Modifica cellulare</a></li>
+                        
+                        </ul>
+                    </div>
+
+                </td>
+
+
+            </tr>
+
+        </table>
+
+</div>
+<div class="row"><h3> </h3></div>
+<div class="row">
+    <div class="bottone">
+         <a href="javascript:history.back()">Torna indietro</a> 
+    </div>
+</div>

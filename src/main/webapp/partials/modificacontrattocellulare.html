@@ -1,0 +1,79 @@
+
+<div class="modal-header">
+   <h2>{{data.titolo}}</h2>
+
+</div>
+
+<div class="modal-body">
+
+    
+    
+    
+    <form role="form" class="form-horizontal" name="contCelModForm" ng-submit="submitForm(contCelModForm.$valid)" novalidate >
+
+     
+       
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Costo bimestrale</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control"  name="costoBimestrale" ng-model="data.contrattocellulare.costoBimestrale" required> 
+                <p ng-show="contCelModForm.costoBimestrale.$invalid && !contCelModForm.costoBimestrale.$pristine" class="help-block">inserisci il costo bimestrale!</p>
+            </div>
+        </div>
+
+    
+        
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Profilo contratto</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="profiloContratto" ng-model="data.contrattocellulare.profiloContratto" required> 
+                <p ng-show="contCelModForm.profiloContratto.$invalid && !contCelModForm.profiloContratto.$pristine" class="help-block">Specificare il profilo del contratto!</p>
+            </div>
+        </div>    
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Tipo contratto</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="tipoContratto" ng-model="data.contrattocellulare.tipoContratto" required> 
+            <p ng-show="contCelModForm.tipoContratto.$invalid && !contCelModForm.tipoContratto.$pristine" class="help-block">Specificare il tipo di contratto!</p>
+            </div>
+        </div>
+
+        
+        
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data attivazione</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataAttivazione" ng-model="data.contrattocellulare.dataAttivazione" 
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened"
+                       ng-click="open($event)" 
+                       close-text="Chiudi" required/> 
+                <p ng-show="contCelModForm.dataAttivazione.$invalid && !contCelModForm.dataAttivazione.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data scadenza</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataScadenza" ng-model="data.contrattocellulare.dataScadenza"
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened2"
+                       ng-click="open2($event)" 
+                       close-text="Chiudi" required/> 
+                <p ng-show="contCelModForm.dataScadenza.$invalid && !contCelModForm.dataScadenza.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="modificaContrattoTelefonico()" ng-disabled="contCelModForm.$invalid">Salva</button>
+    
+    
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+</div>

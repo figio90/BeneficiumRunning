@@ -1,0 +1,82 @@
+<div class="modal-header">
+    <h2>{{data.titolo}}</h2>
+
+</div>
+<div class="modal-body">
+
+    <form role="form" class="form-horizontal" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate> 
+        <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
+        <!-- NOME -->
+        
+        <!--
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Nome</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="nome"  ng-model="dipendente.nome" >
+                <p ng-show="userForm.nome.$invalid && !userForm.nome.$pristine" class="help-block">Inserire nome!</p>
+            </div>
+
+        </div>
+        
+        -->
+
+        <!-- COGNOME -->
+       <!-- <div class="form-group">
+            <label class="col-sm-3 control-label">Cognome</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="cognome"  ng-model="dipendente.cognome" >
+                <p ng-show="userForm.cognome.$invalid && !userForm.cognome.$pristine" class="help-block">Inserire cognome!</p>
+            </div>
+
+        </div>
+       -->
+
+
+        <!-- Codice Fiscale -->
+        <div class="form-group">
+            <label class="col-sm-3 control-label" >Dipendente</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="codiceFiscale"  ng-model="dipendente.codiceFiscale" ng-minlength="0" ng-maxlength="160" required>
+                <p ng-show="userForm.codiceFiscale.$error.minlength" class="help-block">codice fiscale incompleto!</p>
+                <p ng-show="userForm.codiceFiscale.$error.maxlength" class="help-block">codice fiscale ridondante, hai inserito più di 16 caratteri!</p>
+            </div>
+        </div>
+
+        <!-- INDIRIZZO -->
+       <!-- <div class="form-group">
+            <label class="col-sm-3 control-label">Indirizzo</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="indirizzo"  ng-model="dipendente.indirizzo" >
+                <p ng-show="userForm.indirizzo.$invalid && !userForm.indirizzo.$pristine" class="help-block">Inserire indirizzo!</p>
+            </div>
+        </div>
+
+       
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Stipendio mensile</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="stipendio"  ng-model="dipendente.stipendioMensile" >
+                <p ng-show="userForm.stipendio.$invalid && !userForm.stipendio.$pristine" class="help-block">Inserire stipendio!</p>
+            </div>
+        </div>
+        -->
+        <!-- SOCIETA' -->
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Società</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="societa"  ng-model="dipendente.societa" required>
+                <p ng-show="userForm.societa.$invalid && !userForm.societa.$pristine" class="help-block">Inserire società!</p>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<div class="modal-footer">
+
+    <button type="submit" class="btn btn-primary" ng-click="save()" ng-disabled="userForm.$invalid">Salva</button>
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+
+</div>

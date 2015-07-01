@@ -1,0 +1,51 @@
+<style>li {cursor: pointer}</style>
+<div class="row"><h3> </h3></div>
+<div class="row">
+    <div class="col-md-6 intestazione">
+        <h3>LISTA DIPENDENTI</h3>               
+    </div>
+
+
+    <div class="col-md-3 barraricerca">
+        <div class="form-group">
+            <input class="name form-control" type="text" placeholder="Dipendente" ng-model="query.codiceFiscale"/>
+        </div>
+    </div>
+    <div class="col-md-3 barralogout">
+        <!--input ng-model="query" type="search" placeholder="Cognome" autofocus-->
+        <button ng-controller="logoutController" class="btn btn-default bottone" ng-click="logout()" id="submit">Logout</button>
+    </div>
+</div>
+<div class="row"><h3> </h3></div>
+<div class="row">
+    <table class="bordered">
+        <thead>
+                 
+        
+        <th>Dipendente</th>
+        <th>Società</th>
+        <th> <button class="btn btn-default" ng-click="aggiungiDipendente()"/>Nuovo</button></th>
+        </thead>
+        <tr ng-repeat="dipendente in dipendenti| filter:query | orderBy: 'dipendente.codiceFiscale' ">
+            
+            
+            <td>{{dipendente.codiceFiscale}}</td>    
+            <td>{{dipendente.societa}}</td>
+            <td>
+                <div class="btn-group" dropdown ng-hide="currentEdit[dipendente.codiceFiscale]">
+                    <button class="btn btn-default dropdown-toggle" dropdown-toggle type="button">
+                        Azioni <span class="caret"></span>
+                    </button>
+                   <ul class="dropdown-menu" role="menu">
+                                <li><a ng-click="AggiungiContrattoTelefonico(dipendente.codiceFiscale)">Nuovo contratto telefonico</a></li>
+                                <li><a ng-click="AggiungiContrattoAuto(dipendente.codiceFiscale)">Nuovo contratto leasing</a></li>
+                                <li><a ng-click="VisualizzaCellulari(dipendente.codiceFiscale)">Visualizza cellulari</a></li>
+                                <li><a ng-click="visualizzaAuto(dipendente.codiceFiscale)">Visualizza automobili</a></li>
+                                <li><a ng-click="modificaDipendente(dipendente)">Modifica dipendente</a></li>
+                            </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+

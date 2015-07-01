@@ -1,0 +1,99 @@
+<div class="modal-header">
+    <h2>{{data.titolo}}</h2>
+</div>
+<div class="modal-body">
+
+    <form role="form" class="form-horizontal" name="newLeasingForm" ng-submit="submitForm(newLeasingForm.$valid)" novalidate >
+
+        <h4>Dati contratto</h4>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Note contrattuali</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="aziendaLeasing" ng-model="contrattoAuto.societaLeasing" required/>
+                <p ng-show="newLeasingForm.aziendaLeasing.$invalid && !newLeasingForm.aziendaLeasing.$pristine" class="help-block">inserisci il nome della società fornitrice del servizio!</p>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data attivazione</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataAttivazione" ng-model="contrattoAuto.dataAttivazione" 
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened"
+                       ng-click="open($event)" 
+                       close-text="Chiudi" required/> 
+                <p ng-show="newLeasingForm.dataAttivazione.$invalid && !newLeasingForm.dataAttivazione.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data scadenza</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataScadenza" ng-model="contrattoAuto.dataScadenza"
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened2"
+                       ng-click="open2($event)"
+                       close-text="Chiudi" required/>
+                <p ng-show="newLeasingForm.dataScadenza.$invalid && !newLeasingForm.dataScadenza.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Kilometri</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="kilometri" ng-model="contrattoAuto.kilometriContratto" required/>
+                <p ng-show="newLeasingForm.kilometri.$invalid && !newLeasingForm.kilometri.$pristine" class="help-block">inserisci i km previsti dal contratto!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Costo noleggio</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="costoNoleggio" ng-model="contrattoAuto.costoNoleggio" required/>
+                <p ng-show="newLeasingForm.costoNoleggio.$invalid && !newLeasingForm.costoNoleggio.$pristine" class="help-block">inserisci il costo del noleggio!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Costo servizi</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="costoServizi" ng-model="contrattoAuto.costoServizi" required/>
+                <p ng-show="newLeasingForm.costoServizi.$invalid && !newLeasingForm.costoServizi.$pristine" class="help-block">inserisci il costo dei servizi!</p>
+            </div>
+        </div>
+    </form>
+</div>      
+
+<div class="modal-body">
+
+
+    <form role="form" class="form-horizontal" name="newCarForm" ng-submit="submitForm(newCarForm.$valid)" novalidate >
+
+        <h4>Dati automobile</h4>
+
+
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Targa</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="targa" ng-model="contrattoAuto.automobile.targa" required/>
+                <p ng-show="newCarForm.targa.$invalid && !newCarForm.targa.$pristine" class="help-block">inserisci la targa dell'auto!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Modello</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="modelloAuto" ng-model="contrattoAuto.automobile.modello" required/>
+                <p ng-show="newCarForm.modelloAuto.$invalid && !newCarForm.modelloAuto.$pristine" class="help-block">inserisci il modello dell'auto!</p>
+            </div>
+        </div> 
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="aggiungiContratto()" ng-disabled="newLeasingForm.$invalid || newCarForm.$invalid">Salva</button>
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+</div>

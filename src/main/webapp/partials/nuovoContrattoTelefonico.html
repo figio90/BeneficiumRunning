@@ -1,0 +1,98 @@
+<div class="modal-header">
+    <h2>{{data.titolo}}</h2>
+</div>
+
+<div class="modal-body">
+    
+     <form role="form" class="form-horizontal" name="contTelForm" ng-submit="submitForm(contTelForm.$valid)" novalidate> 
+    
+        <h4>Dati contratto</h4>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Profilo contratto</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="profiloContratto"  ng-model="nuovoContratto.profiloContratto" required>              
+                <p ng-show="contTelForm.profiloContratto.$invalid && !contTelForm.profiloContratto.$pristine" class="help-block">Specificare il profilo del contratto!</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Tipo contratto</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="tipoContratto" ng-model="nuovoContratto.tipoContratto" required> 
+                <p ng-show="contTelForm.tipoContratto.$invalid && !contTelForm.tipoContratto.$pristine" class="help-block">Specificare il tipo contratto!</p>
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data attivazione</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataAttivazione" ng-model="nuovoContratto.dataAttivazione" 
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened"
+                       ng-click="open($event)" 
+                       close-text="Chiudi" required/>
+                 <p ng-show="contTelForm.dataAttivazione.$invalid && !contTelForm.dataAttivazione.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data scadenza</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataScadenza" ng-model="nuovoContratto.dataScadenza"
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened2"
+                       ng-click="open2($event)" 
+                       close-text="Chiudi" required/> 
+                <p ng-show="contTelForm.dataScadenza.$invalid && !contTelForm.dataScadenza.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Costo bimestrale</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="costoBimestrale" ng-model="nuovoContratto.costoBimestrale" required>
+                 <p ng-show="contTelForm.costoBimestrale.$invalid && !contTelForm.costoBimestrale.$pristine" class="help-block">inserisci il costo bimestrale!</p>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal-body">
+    
+     
+    
+    <form role="form" class="form-horizontal" name="telForm" ng-submit="submitForm(telForm.$valid)" novalidate>
+        <h4>Dati telefono</h4>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Numero</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="numeroCell" ng-model="nuovoContratto.cellulare.numero" required/>
+                 <p ng-show="telForm.numeroCell.$invalid && !telForm.numeroCell.$pristine" class="help-block">inserisci il numero del cellulare!</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Numero sim</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="numeroSimCard" ng-model="nuovoContratto.cellulare.numeroSim" required/>
+                <p ng-show="telForm.numeroSimCard.$invalid && !telForm.numeroSimCard.$pristine" class="help-block">inserisci il numero della SIM card del cellulare!</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Modello</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="modelloCell" ng-model="nuovoContratto.cellulare.modello" required/> 
+                <p ng-show="telForm.modelloCell.$invalid && !telForm.modelloCell.$pristine" class="help-block">inserisci il modello del cellulare!</p>
+            </div>
+        </div>
+    </form>
+</div>      
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="aggiungiContratto()" ng-disabled="contTelForm.$invalid || telForm.$invalid">Salva</button>
+    
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+</div>

@@ -1,0 +1,45 @@
+
+<div class="modal-header">
+    <h2>{{data.titolo}}</h2>
+
+</div>
+
+<div class="modal-body">
+    
+    <form role="form" class="form-horizontal" name="celModForm" ng-submit="submitForm(celModForm.$valid)" novalidate>
+
+            
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Numero</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="numeroCell" ng-model="data.cellulare.numero" required/>
+                <p ng-show="celModForm.numeroCell.$invalid && !celModForm.numeroCell.$pristine" class="help-block">inserisci il numero del cellulare!</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Numero sim</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="numeroSimCard" ng-model="data.cellulare.numeroSim" required> 
+                <p ng-show="celModForm.numeroSimCard.$invalid && !celModForm.numeroSimCard.$pristine" class="help-block">inserisci il numero della SIM card del cellulare!</p>
+            </div>
+        </div>
+   
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Modello</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="modelloCell" ng-model="data.cellulare.modello" required> 
+                <p ng-show="celModForm.modelloCell.$invalid && !celModForm.modelloCell.$pristine" class="help-block">inserisci il modello del cellulare!</p>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="modificaDatiCellulare()" ng-disabled="celModForm.$invalid">Salva</button>
+   
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+</div>

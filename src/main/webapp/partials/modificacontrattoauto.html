@@ -1,0 +1,87 @@
+
+<div class="modal-header">
+   <h2>{{data.titolo}}</h2>
+
+</div>
+
+<div class="modal-body">
+    
+    
+
+    <form role="form" class="form-horizontal" name="modContrAutoForm" ng-submit="submitForm(modContrAutoForm.$valid)" novalidate >
+        
+ 
+        
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data attivazione</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataAttivazione" ng-model="data.contrattoAuto.dataAttivazione" 
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened"
+                       ng-click="open($event)" 
+                       close-text="Chiudi" required/>
+                 <p ng-show="modContrAutoForm.dataAttivazione.$invalid && !modContrAutoForm.dataAttivazione.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Data scadenza</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="dataScadenza" ng-model="data.contrattoAuto.dataScadenza"
+                       datepicker-popup="dd/MM/yyyy"
+                       is-open="opened2"
+                       ng-click="open2($event)" 
+                       close-text="Chiudi" required/> 
+                <p ng-show="modContrAutoForm.dataScadenza.$invalid && !modContrAutoForm.dataScadenza.$pristine" class="help-block">inserisci una data!</p>
+            </div>
+        </div>
+        
+       
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Costo noleggio</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="costoNoleggio" ng-model="data.contrattoAuto.costoNoleggio" required/>
+                <p ng-show="modContrAutoForm.costoNoleggio.$invalid && !modContrAutoForm.costoNoleggio.$pristine" class="help-block">inserisci il costo del noleggio!</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Costo servizi</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="costoServizi" ng-model="data.contrattoAuto.costoServizi" required/>
+                <p ng-show="modContrAutoForm.costoServizi.$invalid && !modContrAutoForm.costoServizi.$pristine" class="help-block">inserisci il costo del servizio!</p>
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Kilometri</label>
+            <div class="col-sm-9">
+                <input type="number" class="form-control" name="kmContratto" ng-model="data.contrattoAuto.kilometriContratto" required/>
+                <p ng-show="modContrAutoForm.kmContratto.$invalid && !modContrAutoForm.kmContratto.$pristine" class="help-block">inserisci i km previsti dal contratto!</p>
+            </div>
+        </div>
+        
+       
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Note contrattuali</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="aziendaLeasing" ng-model="data.contrattoAuto.societaLeasing" required/>
+                <p ng-show="modContrAutoForm.aziendaLeasing.$invalid && !modContrAutoForm.aziendaLeasing.$pristine" class="help-block">inserisci il nome della società fornitrice del servizio!</p>
+            </div>
+        </div>
+        
+      
+
+        
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary" ng-click="modificaContrattoAuto()" ng-disabled="modContrAutoForm.$invalid">Salva</button>
+    <button class="btn btn-default" ng-click="cancel()">Annulla</button>
+</div>
+
+
+
