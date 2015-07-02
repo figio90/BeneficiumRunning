@@ -76,6 +76,7 @@ public class UtenteController {
     }
 
     @RequestMapping(value = "listautenti", method = RequestMethod.GET)
+    
     public @ResponseBody
     List<Utente> getListaUtenti() {
 
